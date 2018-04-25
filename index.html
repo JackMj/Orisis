@@ -133,14 +133,14 @@
     var direction;
 
     function updatByZip(zip) {
-        var url = "https://api.openweathermap.org/data/2.5/weather?q="+city+","+countrycode+"&APPID="+APPID
+        var url = "http://api.openweathermap.org/data/2.5/weather?q="+city+","+countrycode+"&APPID="+APPID
         // "zip=" + zip +
         // "&APPID=" + APPID;
         sendRequest(url);
     }
 
     function updateByGeo(lat,lng){
-        var url = "https://api.openweathermap.org/data/2.5/weather?"+
+        var url = "http://api.openweathermap.org/data/2.5/weather?"+
          "lat="+lat+
          "&lon="+lng+
          "&APPID="+APPID
