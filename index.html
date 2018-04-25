@@ -1,1 +1,200 @@
-Hello World
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <base href="/">
+    <title>Weather App</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://bootswatch.com/4/slate/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+</head>
+<body>
+
+<style>
+.title-head{
+   font-family: 'Amatic SC', cursive;
+}
+.shadow {
+  -webkit-box-shadow: 3px 3px 5px 6px #ccc;  
+  -moz-box-shadow:    3px 3px 5px 6px #ccc;  
+  box-shadow:         3px 3px 5px 6px #ccc;  
+}
+.jumbotron {
+    min-height: 380px;
+}
+</style>
+
+<div class="container" style="width:1200px">
+<div style="margin-top:45px;height:100%;" class="dumbotron">
+    <h1 class="title-head"> TRAVEL LEISURE</h1>
+    <div  class="jumbotron" style="background-image:url('https://s-media-cache-ak0.pinimg.com/originals/9c/c7/c5/9cc7c58d6d261891d32f3d91455d7db1.jpg'); width:100%;color:cornsilk;background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;">
+        <div class="row">
+        <div class="col-md-6">
+        <h1 style="color:#fff8e5">YOUR DREAM HOLIDAY</h1>
+        <h1 style="padding-left:28%">AWAITS</h1>
+        <h4 class="title-head" style="padding-left:22%">BOOK THE HOLIDAY OF A LIFETIME</h4>
+      </div>
+
+      <div class="col-md-6" >
+          <div style="border-style: solid;border-width: 1px;width:300px">
+         <div class="temperature" ><span style="padding-left:50%" id="location">Unknown</span></div>
+         <div class="temperature" ><span style="padding-left:50%" id="temperature"></span><medium>&#x2103;</medium></div>
+         <div class="image-inline">
+             <img id="icon" style="padding-left:50%"  width="75px" src="imgs/codes/200.png"  alt="weather-icon">
+        </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+      <div class="panel-body">
+          <div class="row">
+          <div  class="col-md-4 text-center " >
+              <div style="color:white">
+                  <img class="shadow" style="height:25%;width:25%;vertical-align:middle;opacity:1.5" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjE2cHgiIGhlaWdodD0iMTZweCIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPGc+Cgk8cGF0aCBkPSJNMjU2LDBDMTE0LjYwOSwwLDAsMTE0LjYwOSwwLDI1NmMwLDE0MS4zOTEsMTE0LjYwOSwyNTYsMjU2LDI1NmMxNDEuMzkxLDAsMjU2LTExNC42MDksMjU2LTI1NiAgIEM1MTIsMTE0LjYwOSwzOTcuMzkxLDAsMjU2LDB6IE0yNTYsNDcyYy0xMTkuMjk3LDAtMjE2LTk2LjcwMy0yMTYtMjE2UzEzNi43MDMsNDAsMjU2LDQwczIxNiw5Ni43MDMsMjE2LDIxNlMzNzUuMjk3LDQ3MiwyNTYsNDcyeiAgICIgZmlsbD0iI0ZGRkZGRiIvPgoJPGc+CgkJPHBhdGggZD0iTTI0OS43MDMsMjAxLjI1SDE4OHYtMjVoMTkuMzEyYzYuODU5LDAsMTMuNDIyLTEuMjE5LDE5LjUtMy41OTRjNi4xNzItMi4zNzUsMTEuNDM4LTUuNjQxLDE1Ljc5Ny05Ljc5NyAgICBjNC4zNTgtNC4yMDMsNy45MjItOS4yNSwxMC41NDctMTUuMjM0YzIuNzM0LTUuOTA2LDQuMDQ3LTEyLjUsNC4wNDctMTkuNjI1SDI4NHYyNTZoLTM0LjI5N1YyMDEuMjV6IiBmaWxsPSIjRkZGRkZGIi8+Cgk8L2c+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==" />
+                  <span>Book Your Flights</span>
+              </div>
+          </div>
+          <hr>
+          <div  class="col-md-4 text-center">
+              <div style="color:white">
+                  <img class="shadow" style="height:25%;width:25%;vertical-align:middle" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjE2cHgiIGhlaWdodD0iMTZweCIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPGc+Cgk8cGF0aCBkPSJNMjU2LDBDMTE0LjYwOSwwLDAsMTE0LjYwOSwwLDI1NmMwLDE0MS4zOTEsMTE0LjYwOSwyNTYsMjU2LDI1NmMxNDEuMzkxLDAsMjU2LTExNC42MDksMjU2LTI1NiAgIEM1MTIsMTE0LjYwOSwzOTcuMzkxLDAsMjU2LDB6IE0yNTYsNDcyYy0xMTkuMjk3LDAtMjE2LTk2LjcwMy0yMTYtMjE2UzEzNi43MDMsNDAsMjU2LDQwczIxNiw5Ni43MDMsMjE2LDIxNlMzNzUuMjk3LDQ3MiwyNTYsNDcyeiAgICIgZmlsbD0iI0ZGRkZGRiIvPgoJPGc+CgkJPHBhdGggZD0iTTE3NiwyMDkuNzVjMi41MzEtMjQuNDA2LDEwLjk2OS00NC4xNDEsMjUuMzc1LTU5LjIxOWMxNC4zNDQtMTUuMDMxLDM0LTIyLjUzMSw1OC44NTktMjIuNTMxICAgIGMxMi4yMzMsMCwyMy4xNzIsMi4xNDEsMzIuNTk0LDYuNDg0YzkuNDIyLDQuMjk3LDE3LjM3NSwxMC4xNDEsMjMuNzE5LDE3LjQ4NGM2LjMyOCw3LjI4MSwxMS4yMTksMTUuNTQ3LDE0LjUxNiwyNC43OTcgICAgYzMuMjgxLDkuMjY2LDQuOTM4LDE4Ljg0NCw0LjkzOCwyOC43MDNjMCw4LjYyNS0wLjk4NCwxNi4zOTEtMy4wNjIsMjMuMjY2Yy0yLjA5NSw2Ljg3NS00Ljk1MywxMi45ODQtOC42ODgsMTguMjk3ICAgIGMtMy43NSw1LjQzOC04LjAzMSwxMC4zNzUtMTMuMTA5LDE1Yy00LjkyMiw0LjY4OC0xMC4zMjcsOS4wNzgtMTYuMTg4LDEzLjIzNGMtMTAuODQ1LDguNDA1LTIyLjEyNSwxNi40NTItMzMuNjcyLDI0LjIwMiAgICBjLTExLjU5NCw3Ljc1LTIyLjcxOSwxNi41MzEtMzMuMzc1LDI2LjMyOGMtMy44NzUsMy42NzItNy4wNjIsNy40MzgtOS41OTQsMTEuNDUzYy0yLjUsNC4wMTctNC41OTQsOS4wMzEtNi4yNjYsMTUuMDE3aDExNy4zNzUgICAgVjM4NEgxNzguNTMxdi0yNC4yMDNjMC0xMC4wNDcsMy4xODgtMjAsOS42MjUtMjkuNTc4YzYuNDM4LTkuNzM0LDE0LjQzOC0xOS4xODgsMjQuMTI1LTI4LjIxOSAgICBjOS42MjUtOS4wMzEsMjAuMTg4LTE3LjgyOCwzMS43ODEtMjYuMzU5YzExLjYwOS04LjUxNiwyMi41MzEtMTYuNzY2LDMyLjg5MS0yNC43ODFjNy44NDQtNS45ODQsMTQuMDMxLTEyLjM1OSwxOC42NzItMTkuMjM0ICAgIGM0LjUxNi02Ljg1OSw2Ljg1OS0xNS42MjUsNi44NTktMjYuMzQ0YzAtMTUuMTcyLTMuODEyLTI3LjAzMS0xMS43MzQtMzUuNTMxYy03Ljc4MS04LjQ4NC0xNy45MzgtMTIuNzM0LTMwLjUxNi0xMi43MzQgICAgYy0xNS4zNTksMC0yNy41MzEsNC43MDMtMzYuNDUzLDE0LjEwOWMtOSw5LjM3NS0xMy40MzgsMjIuMjUtMTMuNDM4LDM4LjYyNUwxNzYsMjA5Ljc1TDE3NiwyMDkuNzV6IiBmaWxsPSIjRkZGRkZGIi8+Cgk8L2c+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==" />
+                  <span>Book Your Destination</span>
+              </div>
+          </div>
+          <hr>
+          <div  class="col-md-4 text-center">
+              <div style="color:white">
+                  <img class="shadow" style="height:25%;width:25%;vertical-align:middle" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjE2cHgiIGhlaWdodD0iMTZweCIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPGc+Cgk8cGF0aCBkPSJNMjU2LDBDMTE0LjYwOSwwLDAsMTE0LjYwOSwwLDI1NmMwLDE0MS4zOTEsMTE0LjYwOSwyNTYsMjU2LDI1NmMxNDEuMzkxLDAsMjU2LTExNC42MDksMjU2LTI1NiAgIEM1MTIsMTE0LjYwOSwzOTcuMzkxLDAsMjU2LDB6IE0yNTYsNDcyYy0xMTkuMjk3LDAtMjE2LTk2LjcwMy0yMTYtMjE2UzEzNi43MDMsNDAsMjU2LDQwczIxNiw5Ni43MDMsMjE2LDIxNlMzNzUuMjk3LDQ3MiwyNTYsNDcyeiAgICIgZmlsbD0iI0ZGRkZGRiIvPgoJPGc+CgkJPHBhdGggZD0iTTE4Mi44MjgsMjA0Ljc4MWMyLjY4OC0yNC4wNjIsOS42NzItNDIuOTIyLDIwLjkzOC01Ni41QzIxNS4wMzEsMTM0Ljc2NiwyMzIuODEyLDEyOCwyNTcuMjUsMTI4ICAgIGMyMS4xNTYsMCwzNy45MzgsNS45NjksNTAuMjUsMTcuODc1czE4LjQ2OSwyNy43NSwxOC40NjksNDcuNDY5YzAsMTQuMTI1LTIuNTYyLDI1LjM3NS03Ljc4MSwzMy43ODEgICAgYy01LjIzMyw4LjM3NS0xMy40NTMsMTQuOTA2LTI0Ljc4LDE5LjYyNWM1LjQyMiwxLjc1LDEwLjY0MSw0LjI1LDE1LjY4OCw3LjVjNS4xODgsMy4yNSw5LjczNCw3LjQwNiwxMy42NzIsMTIuNTk0ICAgIGM0LjA2Miw1LjE1Niw3LjI2NywxMS4yMzQsOS43MzQsMTguMzQ0YzIuMzQ0LDcuMDQ3LDMuNSwxNS4zNTksMy41LDI1LjA5NWMwLDEyLjE3Mi0yLjA3OCwyMi42ODgtNi4yMzQsMzEuNzUgICAgYy00LjI4LDkuMTg4LTkuOTgzLDE2LjkwNS0xNy4wNzcsMjIuOTgzYy03LjIzNCw2LjIxOS0xNS42NDIsMTAuOTM4LTI1LjA0NywxNC4xODhjLTkuNTMxLDMuMjMzLTE5LjY3Myw0Ljc5Ny0zMC4zOTIsNC43OTcgICAgYy0yMS45NjksMC00MC4xNTYtNi45ODMtNTQuNS0yMC45ODNjLTE0LjM0NC0xMy45ODQtMjMuMjUtMzQuNTQ4LTI2Ljc1LTYyaDMyLjU2MmMzLjE4OCwyMCw4LjczNCwzNC4wNDcsMTYuNSw0Mi4yMDIgICAgYzcuNzUsOC4wMzEsMTguNTMxLDEyLjA2MiwzMi4xODgsMTIuMDYyYzYuMTU2LDAsMTIuMDk0LTEuMDE3LDE3LjcwMy0zLjA0OGM1LjY0MS0yLjAxNiwxMC41MTYtNS4wMTYsMTQuODEyLTkuMDE2ICAgIGM0LjMxMi00LDcuNzM0LTguNzM0LDEwLjM5Mi0xNC4yODFjMi41LTUuNjg4LDMuNzAyLTExLjkwNSwzLjcwMi0xOC42NTVjMC0xMy41MTctNC4xMjUtMjUuMDE3LTEyLjUtMzQuNDM4ICAgIGMtOC4yNS05LjM3NS0xOS42NDEtMTQuMDk0LTM0LjEwOC0xNC4wOTRoLTE4LjUxNnYtMjguNzE5aDE4LjUxNmM2LjcxOSwwLDEyLjQyMi0xLjA2MiwxNy4xMDgtMy4yODEgICAgYzQuNjU2LTIuMjM0LDguNDg0LTUuMDk0LDExLjQ1My04LjYyNWMyLjk1My0zLjUsNS4wMzEtNy41LDYuMjItMTEuODc1YzEuMjk3LTQuNDY5LDEuNzk3LTguODc1LDEuNzk3LTEzLjI1ICAgIGMwLTEyLjM3NS0zLjQwNi0yMi4xMDktMTAuMjUtMjkuMTU2Yy02LjgyOC03LjA3OC0xNS45MjItMTAuNTk0LTI3LjE4OC0xMC41OTRjLTYuOTUzLDAtMTIuNzk3LDEuMjgxLTE3LjY1NiwzLjk4NCAgICBjLTQuODEyLDIuNjQxLTguODc1LDYuMTU2LTEyLjA3OCwxMC41NDdjLTMuMTg4LDQuNDUzLTUuNzE5LDkuNTk0LTcuNjI1LDE1LjQ4NGMtMS44NTksNS44NzUtMy4yMTksMTIuMTA5LTQsMTguNTE2SDE4Mi44Mjh6IiBmaWxsPSIjRkZGRkZGIi8+Cgk8L2c+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==" />
+                  <span>Chipest Flights</span>
+              </div>
+          </div>
+      </div>
+    </div>
+    <hr>
+      <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="row">
+              <div  class="col-md-3 text-center shadow">
+                <div style="color:yellow">
+                    <div class="grid">
+                      <div >
+                        <h6>Chipest Flights</h6>
+                      </div>
+                      <div >
+                        <img style="height:20%;width:20%" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEycHgiIGhlaWdodD0iNTEycHgiPgo8cGF0aCBzdHlsZT0iZmlsbDojRTZFNkU2OyIgZD0iTTQxOC40ODcsNDk5LjU5OWw1My43MzItNTMuNzMybC04NC43MDYtMjU1Ljk2MUw0OTYuODA4LDg1LjAyMSAgYzE5Ljk2Ny0xOS4xNjIsMjAuMjk1LTUwLjk4OCwwLjcyNi03MC41NTZsMCwwYy0xOS41NjgtMTkuNTY4LTUxLjM5NS0xOS4yNDEtNzAuNTU2LDAuNzI2TDMyMi4wOTIsMTI0LjQ4N0w2Ni4xMzEsMzkuNzggIEwxMi40LDkzLjUxMmwyMTMuMzUyLDEzMS4zNjVMMTE3Ljc5NiwzMzcuMzcxbC02OS4yMzEtMTEuMzY2TDAsMzc0LjU3bDEwMS43OCwzNS42NDlsMzUuNjQ5LDEwMS43OGw0OC41NjUtNDguNTY1bC0xMS4zNjYtNjkuMjMxICBsMTEyLjQ5NC0xMDcuOTU1TDQxOC40ODcsNDk5LjU5OXoiLz4KPHBhdGggc3R5bGU9ImZpbGw6I0NDQ0NDQzsiIGQ9Ik00MTguNDg3LDQ5OS41OTlsNTMuNzMyLTUzLjczMmwtODQuNzA2LTI1NS45NjFMNDk2LjgwOCw4NS4wMjEgIGMxOS45NjctMTkuMTYyLDIwLjI5NS01MC45ODgsMC43MjYtNzAuNTU2bDAsMEwxMDEuNzgsNDEwLjIxOWwzNS42NDksMTAxLjc4bDQ4LjU2NS00OC41NjVsLTExLjM2Ni02OS4yMzFsMTEyLjQ5NC0xMDcuOTU1ICBMNDE4LjQ4Nyw0OTkuNTk5eiIvPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K" />
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div  class="col-md-3 text-center shadow">
+                <div style="color:yellow">
+                    <h6>Chipest Flights</h6>
+                    <img style="height:20%;width:20%" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMS4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ4NC4xODQgNDg0LjE4NCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDg0LjE4NCA0ODQuMTg0OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjE2cHgiIGhlaWdodD0iMTZweCI+CjxnPgoJPHBhdGggZD0iTTMwOS40MywyMTkuOTQ0Yy0xOS0xMC41LTM5LjItMTguNS01OS4yLTI2LjhjLTExLjYtNC44LTIyLjctMTAuNC0zMi41LTE4LjJjLTE5LjMtMTUuNC0xNS42LTQwLjQsNy01MC4zICAgYzYuNC0yLjgsMTMuMS0zLjcsMTkuOS00LjFjMjYuMi0xLjQsNTEuMSwzLjQsNzQuOCwxNC44YzExLjgsNS43LDE1LjcsMy45LDE5LjctOC40YzQuMi0xMyw3LjctMjYuMiwxMS42LTM5LjMgICBjMi42LTguOC0wLjYtMTQuNi04LjktMTguM2MtMTUuMi02LjctMzAuOC0xMS41LTQ3LjItMTQuMWMtMjEuNC0zLjMtMjEuNC0zLjQtMjEuNS0yNC45Yy0wLjEtMzAuMy0wLjEtMzAuMy0zMC41LTMwLjMgICBjLTQuNCwwLTguOC0wLjEtMTMuMiwwYy0xNC4yLDAuNC0xNi42LDIuOS0xNywxNy4yYy0wLjIsNi40LDAsMTIuOC0wLjEsMTkuM2MtMC4xLDE5LTAuMiwxOC43LTE4LjQsMjUuM2MtNDQsMTYtNzEuMiw0Ni03NC4xLDk0ICAgYy0yLjYsNDIuNSwxOS42LDcxLjIsNTQuNSw5Mi4xYzIxLjUsMTIuOSw0NS4zLDIwLjUsNjguMSwzMC42YzguOSwzLjksMTcuNCw4LjQsMjQuOCwxNC42YzIxLjksMTguMSwxNy45LDQ4LjItOC4xLDU5LjYgICBjLTEzLjksNi4xLTI4LjYsNy42LTQzLjcsNS43Yy0yMy4zLTIuOS00NS42LTktNjYuNi0xOS45Yy0xMi4zLTYuNC0xNS45LTQuNy0yMC4xLDguNmMtMy42LDExLjUtNi44LDIzLjEtMTAsMzQuNyAgIGMtNC4zLDE1LjYtMi43LDE5LjMsMTIuMiwyNi42YzE5LDkuMiwzOS4zLDEzLjksNjAsMTcuMmMxNi4yLDIuNiwxNi43LDMuMywxNi45LDIwLjFjMC4xLDcuNiwwLjEsMTUuMywwLjIsMjIuOSAgIGMwLjEsOS42LDQuNywxNS4yLDE0LjYsMTUuNGMxMS4yLDAuMiwyMi41LDAuMiwzMy43LTAuMWM5LjItMC4yLDEzLjktNS4yLDEzLjktMTQuNWMwLTEwLjQsMC41LTIwLjksMC4xLTMxLjMgICBjLTAuNS0xMC42LDQuMS0xNiwxNC4zLTE4LjhjMjMuNS02LjQsNDMuNS0xOSw1OC45LTM3LjhDMzg2LjMzLDMyOS41NDQsMzcwLjAzLDI1My40NDQsMzA5LjQzLDIxOS45NDR6IiBmaWxsPSIjRkZGRkZGIi8+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==" />
+                </div>
+            </div>
+            <div  class="col-md-3 text-center shadow">
+                <div style="color:yellow">
+                    <h6>Chipest Flights</h6>
+                    <img style="height:20%;width:20%" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjE2cHgiIGhlaWdodD0iMTZweCIgdmlld0JveD0iMCAwIDkxMCA5MTAiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDkxMCA5MTA7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPGc+Cgk8Zz4KCQk8cGF0aCBkPSJNNzg5LjEsNDQ5LjlIODc5VjM2OWMwLTE2LjgtMTMuNy0zMC41LTMwLjUtMzAuNUgzNDIuMWMxLjYwMSwzLjMsMy4xMDEsNi42LDQuNjAxLDEwYzEwLjIsMjQuMiwxNS4zOTksNDkuOSwxNS4zOTksNzYuNCAgICBjMCw4LjM5OS0wLjUsMTYuOC0xLjYsMjVINzg5LjF6IiBmaWxsPSIjRkZGRkZGIi8+CgkJPHBhdGggZD0iTTE2NS45LDI2My43Yy0zLjQsMC02LjcsMC4xLTEwLDAuM3YxODUuOEgyNjdoNTguMWMxLjMwMS04LjIsMS45LTE2LjUsMS45LTI1YzAtMzEuOC05LjItNjEuMzk5LTI1LjEtODYuMyAgICBDMjczLjQsMjkzLjUsMjIzLjEsMjYzLjcsMTY1LjksMjYzLjd6IiBmaWxsPSIjRkZGRkZGIi8+CgkJPHBhdGggZD0iTTMwLDczMS41aDYwLjljMTYuNiwwLDMwLTEzLjQsMzAtMzB2LTk1LjdoNjY4LjJ2OTUuN2MwLDE2LjYsMTMuNCwzMCwzMCwzMEg4ODBjMTYuNiwwLDMwLTEzLjQsMzAtMzBWNTE0LjkgICAgYzAtMTYuNjAxLTEzLjQtMzAtMzAtMzBoLTkwLjlIMTIwLjlWMjcwLjF2LTYxLjZjMC0xNi42LTEzLjQtMzAtMzAtMzBIMzBjLTE2LjYsMC0zMCwxMy40LTMwLDMwdjExMS43djM4LjVWNDkxdjM4LjV2MTcyICAgIEMwLDcxOCwxMy40LDczMS41LDMwLDczMS41eiIgZmlsbD0iI0ZGRkZGRiIvPgoJPC9nPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=" />
+                </div>
+            </div>
+            <div  class="col-md-3 text-center shadow">
+                <div style="color:yellow">
+                    <h6>Chipest Flights</h6>
+                    <img style="height:20%;width:20%" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjEyOHB4IiBoZWlnaHQ9IjEyOHB4IiB2aWV3Qm94PSIwIDAgNDguOTk3IDQ4Ljk5OCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDguOTk3IDQ4Ljk5ODsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8Zz4KCTxwYXRoIGQ9Ik00NS45NjEsMTguNzAyYy0wLjAzMy0wLjAzOC0wLjA2MS0wLjA3NS0wLjEtMC4xMTJsLTEuNzE3LTEuNjU3YzEuNDI0LTAuMzIzLDIuOTU3LTEuNTE2LDIuOTU3LTIuNzQgICBjMC0xLjQyNi0xLjk3OS0xLjkzMi0zLjY2OC0xLjkzMmMtMS43NjYsMC0xLjk3MSwxLjIxLTEuOTkyLDIuMDY1bC00LjQzLTQuMjcxYy0wLjktMC44OTEtMi42MDctMS41OTItMy44ODMtMS41OTJIMjQuNWgtMC4wMDIgICBoLTguNjNjLTEuMjc1LDAtMi45ODEsMC43MDEtMy44ODIsMS41OTJsLTQuNDI5LDQuMjcxYy0wLjAyMy0wLjg1NS0wLjIyOC0yLjA2NS0xLjk5Mi0yLjA2NWMtMS42OTEsMC0zLjY2OSwwLjUwNi0zLjY2OSwxLjkzMiAgIGMwLDEuMjI0LDEuNTM0LDIuNDE3LDIuOTU4LDIuNzRsLTEuNzE3LDEuNjU3Yy0wLjAzOSwwLjAzNy0wLjA2NiwwLjA3NC0wLjEsMC4xMTJDMS4yLDIwLjI3MiwwLDIzLjE4NCwwLDI1LjI5N3Y2LjI3OSAgIGMwLDEuNTI0LDAuNjAxLDIuOTA3LDEuNTcyLDMuOTM4djIuNDM1YzAsMS40MjQsMS4xOTIsMi41ODUsMi42NTgsMi41ODVoMy4yMTRjMS40NjYsMCwyLjY1Ny0xLjE1OSwyLjY1Ny0yLjU4NXYtMC42MjNoMTQuMzk3ICAgSDI0LjVoMTQuMzk2djAuNjIzYzAsMS40MjYsMS4xOSwyLjU4NSwyLjY1OCwyLjU4NWgzLjIxM2MxLjQ2NywwLDIuNjU3LTEuMTYxLDIuNjU3LTIuNTg1di0yLjQzNSAgIGMwLjk3Mi0xLjAzMSwxLjU3Mi0yLjQxNCwxLjU3Mi0zLjkzOHYtNi4yNzlDNDguOTk4LDIzLjE4NCw0Ny43OTgsMjAuMjcyLDQ1Ljk2MSwxOC43MDJ6IE0xMy42MTMsMTEuOTUzICAgYzAuNjIzLTAuNTE5LDEuNzEyLTAuOTEzLDIuMjU1LTAuOTEzaDguNjNIMjQuNWg4LjYzYzAuNTQzLDAsMS42MzIsMC4zOTQsMi4yNTUsMC45MTNsNS44MDksNS42M0gyNC41aC0wLjAwMkg3LjgwNUwxMy42MTMsMTEuOTUzICAgeiBNMS45OTMsMjQuMzQ3YzAtMS41NDYsMS4yMS0yLjgwMSwyLjcwNC0yLjgwMWMxLjQ5MywwLDYuMzcyLDIuODY0LDYuMzcyLDQuNDFzLTQuODc5LDEuMTg4LTYuMzcyLDEuMTg4ICAgQzMuMjAzLDI3LjE0NCwxLjk5MywyNS44OTQsMS45OTMsMjQuMzQ3eiBNMTAuMTAyLDM0LjU3M0g5LjU4N0g5LjA3MmwtMy4wNTUsMC4wMDVjLTAuODQ4LTAuMjY0LTEuNDQ2LTAuNTcyLTEuODY5LTAuOTAzICAgYy0wLjIxNC0wLjE2Ny0wLjM3OC0wLjM0MS0wLjUwNi0wLjUxNGMtMC4xMjktMC4xNzUtMC4yMjMtMC4zNDctMC4yODQtMC41MTljLTAuMzgtMS4wNzQsMC40MDUtMi4wNjEsMC40MDUtMi4wNjFoNS4yMTQgICBsMy40NzYsMy45OUwxMC4xMDIsMzQuNTczTDEwLjEwMiwzNC41NzN6IE0zMS45OTYsMzQuNTc1SDI0LjVoLTAuMDAyaC03LjQ5NmMtMS41NjMsMC0yLjgzMi0xLjI2OS0yLjgzMi0yLjgzMWgxMC4zMjhIMjQuNWgxMC4zMjggICBDMzQuODI4LDMzLjMwOCwzMy41NTksMzQuNTc1LDMxLjk5NiwzNC41NzV6IE0zMi42NTQsMjkuODEySDI0LjVoLTAuMDAyaC04LjE1NGMtMS43LDAtMy4wOC0yLjA5Ni0zLjA4LTQuNjgxaDExLjIzNEgyNC41aDExLjIzNCAgIEMzNS43MzQsMjcuNzE3LDM0LjM1NCwyOS44MTIsMzIuNjU0LDI5LjgxMnogTTQ1LjY0MSwzMi42NDRjLTAuMDYyLDAuMTcyLTAuMTU2LDAuMzQ0LTAuMjg1LDAuNTE4ICAgYy0wLjEyNywwLjE3My0wLjI5MSwwLjM0Ny0wLjUwNiwwLjUxNGMtMC40MjIsMC4zMzEtMS4wMjEsMC42NDEtMS44NjksMC45MDNsLTMuMDU1LTAuMDA1aC0wLjUxNWgtMC41MTVoLTIuMzUzbDMuNDc4LTMuOTloNS4yMTMgICBDNDUuMjM0LDMwLjU4Myw0Ni4wMiwzMS41NjgsNDUuNjQxLDMyLjY0NHogTTQ0LjMwMSwyNy4xNDRjLTEuNDkyLDAtNi4zNzEsMC4zNTYtNi4zNzEtMS4xODhzNC44NzktNC40MSw2LjM3MS00LjQxICAgYzEuNDk0LDAsMi43MDQsMS4yNTUsMi43MDQsMi44MDFDNDcuMDA1LDI1Ljg5Miw0NS43OTUsMjcuMTQ0LDQ0LjMwMSwyNy4xNDR6IiBmaWxsPSIjRkZGRkZGIi8+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==" />
+                </div>
+            </div>
+        </div>
+        </div>
+      </div>
+      </div>
+</body>
+
+<script>
+    var city = "Pretoria"
+    var countrycode = "ZA"
+    var APPID = "2967f4c9b38a2e6caf98e6669694c022";
+    var temperature;
+    var loc;
+    var icon;
+    var humidity;
+    var wind;
+    var direction;
+
+    function updatByZip(zip) {
+        var url = "http://api.openweathermap.org/data/2.5/weather?q="+city+","+countrycode+"&APPID="+APPID
+        // "zip=" + zip +
+        // "&APPID=" + APPID;
+        sendRequest(url);
+    }
+
+    function updateByGeo(lat,lng){
+        var url = "http://api.openweathermap.org/data/2.5/weather?"+
+         "lat="+lat+
+         "&lon="+lng+
+         "&APPID="+APPID
+        sendRequest(url);
+    }
+
+    function sendRequest(url) {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if(xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                var data = JSON.parse(xmlhttp.responseText);
+                var weather = {};
+                weather.icon = data.weather[0].id;
+                weather.direction = data.wind.deg;
+                weather.loc = data.name;
+                weather.temperature = celcius(data.main.temp);
+                update(weather);
+                console.log(data);
+            }
+        };
+        xmlhttp.open("GET",url,true);
+        xmlhttp.send();
+    }
+
+    function celcius(c)
+    {
+        return Math.round(c - 273.15);
+    }
+
+    function update(weather) {
+        loc.innerHTML = weather.loc;
+        temperature.innerHTML = weather.temperature;
+        icon.src = "imgs/codes/" + weather.icon + ".png";
+        console.log(icon.src);
+    }
+    function showPosition(position) {
+        updateByGeo(position.coords.latitude,position.coords.longitude)
+    }
+
+    window.onload = function () {
+        temperature = document.getElementById('temperature');
+        loc = document.getElementById('location');
+        icon = document.getElementById('icon');
+
+      if (navigator.geolocation){
+            navigator.geolocation.getCurrentPosition(showPosition)
+      }
+      else {
+          var zip = window.prompt("could not discover your location. what is your zip code");
+          updateByZip(zip);
+      }
+
+    }
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.1/js/foundation.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</html>
